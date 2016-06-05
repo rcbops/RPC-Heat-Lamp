@@ -16,6 +16,7 @@ parameter_groups:
       - image
       - flavor
       - floating-network
+      - web-count
 
   - label: Don't touch
     description: These parameters should be left default except in special cases.
