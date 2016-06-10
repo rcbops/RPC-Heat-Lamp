@@ -1,21 +1,21 @@
 minion-4gb:
-  - james-lamp-web-1:
+  - lamp-web-1:
       grains:
         roles:
           - lamp-web
-  - james-lamp-web-2:
+  - lamp-web-2:
       grains:
         roles:
           - lamp-web
-  - james-lamp-mysql-master:
+  - lamp-mysql-master:
       grains:
         roles:
           - lamp-mysql-master
-  - james-lamp-mysql-slave:
+  - lamp-mysql-slave:
       grains:
         roles:
           - lamp-mysql-slave
-  - james-lamp-haproxy-1:
+  - lamp-haproxy-1:
       grains:
         roles:
           - lamp-haproxy
