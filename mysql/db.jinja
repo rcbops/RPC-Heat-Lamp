@@ -1,0 +1,17 @@
+{% set interface = salt['pillar.get']("interfaces:private", 'eth0') %}
+
+{% set master = salt['mine.get']('roles:lamp-mysql-master', 'internal_ips', 'grain').values()[0][0] %}
+
+{% set slave_dict = salt['pillar.get']("lamp:slave", {}) %}
+
+{% set slave = {
+    'username': slave_dict.get('username', 'username'),
+    'password': slave_dict.get('password', 'changeme'),
+    'host': slave_dict.get('host', "'%'")
+} %}
+
+{% set db = {
+    'interface': interface,
+    'master': master,
+    'slave': slave
+} %}
